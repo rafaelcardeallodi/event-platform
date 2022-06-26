@@ -9,6 +9,7 @@ import {
 } from "phosphor-react";
 
 import "@vime/core/themes/default.css";
+import { Button } from "./Button";
 
 interface VideoProps {
   lessonSlug: string;
@@ -68,21 +69,13 @@ export function Video({ lessonSlug }: VideoProps) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <a
-              href="#"
-              className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors"
-            >
-              <DiscordLogo size={24} />
+            <Button leftIcon={<DiscordLogo size={24} />} variant="primary">
               Comunidade do Discord
-            </a>
+            </Button>
 
-            <a
-              href="#"
-              className="p-4 text-sm border border-blue-500 text-blue-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors"
-            >
-              <Lightning size={24} />
+            <Button leftIcon={<Lightning size={24} />} variant="secondary">
               Acesse o desafio
-            </a>
+            </Button>
           </div>
         </div>
 
