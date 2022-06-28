@@ -58,23 +58,25 @@ export function Subscribe() {
           >
             <input
               value={name}
-              className="bg-gray-900 rounded px-5 h-14"
+              className="bg-gray-900 rounded border border-transparent px-5 h-14 focus:outline-none focus:border-green-300 focus:invalid:border-red-500 focus:invalid:text-red-500"
               type="text"
               placeholder="Seu nome completo"
               onChange={(event) => setName(event.target.value)}
+              required
             />
             <input
               value={email}
-              className="bg-gray-900 rounded px-5 h-14"
+              className="bg-gray-900 rounded border border-transparent px-5 h-14 focus:outline-none focus:border-green-300 focus:invalid:border-red-500 focus:invalid:text-red-500"
               type="email"
               placeholder="Digite seu e-mail"
               onChange={(event) => setEmail(event.target.value)}
+              required
             />
 
             <button
               type="submit"
-              disabled={loading}
-              className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50 flex items-center justify-center"
+              disabled={loading || !name || !email}
+              className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50 disabled:hover:bg-green-500 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? <Loading /> : "Garantir minha vaga"}
             </button>

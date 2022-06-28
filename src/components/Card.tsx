@@ -20,7 +20,7 @@ export function Card({ title, description, icon, ...props }: CardProps) {
         <strong className="text-lg md:text-2xl">{title}</strong>
         <p className="md:text-sm text-xs text-gray-200 mt-2">{description}</p>
       </div>
-      <div className="h-full p-6 items-center hidden sm:flex">
+      <div className="h-full p-6 items-center text-blue-500 hidden sm:flex">
         <CaretRight size={24} />
       </div>
     </a>
