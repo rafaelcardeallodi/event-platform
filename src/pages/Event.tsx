@@ -12,6 +12,8 @@ export function Event() {
   const { slug } = useParams<{ slug: string }>();
 
   function toggleMenuMobileOpen() {
+    document.body.style.overflow = isMenuMobileOpen ? "unset" : "hidden";
+
     setIsMenuMobileOpen(!isMenuMobileOpen);
   }
 
