@@ -1,15 +1,15 @@
+import { AnchorHTMLAttributes } from "react";
 import classNames from "classnames";
 
-interface ButtonProps {
+interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   leftIcon?: React.ReactNode;
   variant: "primary" | "secondary";
   children: React.ReactNode;
 }
 
-export function Button({ leftIcon, variant, children }: ButtonProps) {
+export function Button({ leftIcon, variant, children, ...props }: ButtonProps) {
   return (
     <a
-      href="#"
       className={classNames(
         "p-4 text-sm flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors",
         {
@@ -18,6 +18,7 @@ export function Button({ leftIcon, variant, children }: ButtonProps) {
             variant === "secondary",
         }
       )}
+      {...props}
     >
       {leftIcon && leftIcon}
       {children}

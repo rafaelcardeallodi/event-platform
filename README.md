@@ -46,6 +46,7 @@ Este é um projeto desenvolvido durante o evento [Ignite Lab - ReactJS](https://
     - Criado componente de botão e substituído em todos os botões da aplicação;
     - Adicionado responsividade em toda aplicação;
     - Criado componente de MobileMenu;
+    - Criado componente de Card (Material complementar/Wallpapers exclusivos);
     - Em andamento...
 
 ## 🔖 Layout
