@@ -7,6 +7,8 @@ import { Logo } from "../components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
 
 import codeMockupImg from "../assets/code-mockup.png";
+import { GithubLogo } from "phosphor-react";
+import { Button } from "../components/Button";
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -80,6 +82,14 @@ export function Subscribe() {
             >
               {loading ? <Loading /> : "Garantir minha vaga"}
             </button>
+
+            <Button
+              href="#"
+              leftIcon={<GithubLogo size={24} />}
+              variant="secondary"
+            >
+              Cadastrar com GitHub
+            </Button>
           </form>
         </div>
       </div>
