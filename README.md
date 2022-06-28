@@ -44,6 +44,8 @@ Este é um projeto desenvolvido durante o evento [Ignite Lab - ReactJS](https://
 
     - Criado componente de loading com um spinner girando em looping;
     - Criado componente de botão e substituído em todos os botões da aplicação;
+    - Adicionado responsividade em toda aplicação;
+    - Criado componente de MobileMenu;
     - Em andamento...
 
 ## 🔖 Layout
