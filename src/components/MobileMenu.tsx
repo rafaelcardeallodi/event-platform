@@ -12,7 +12,7 @@ export function MobileMenu({ isOpen }: MobileMenuProps) {
   return (
     <div
       className={classNames(
-        "w-full fixed top-[72px] left-0 right-0 bottom-0 bg-gray-700 border-l border-gray-600 z-[999] md:hidden",
+        "w-full fixed top-[59px] left-0 right-0 bottom-0 bg-gray-700 border-l border-gray-600 z-[999] md:hidden",
         {
           hidden: !isOpen,
         }

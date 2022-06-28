@@ -11,7 +11,7 @@ export function Header({
   onToggleIsMenuMobileOpen,
 }: HeaderProps) {
   return (
-    <header className="w-full fixed py-4 flex items-center justify-between px-6 bg-gray-700 border-b border-gray-600 z-[1000] md:justify-center md:py-5 md:relative">
+    <header className="w-full fixed py-2 flex gap-[70px] items-center justify-between px-6 bg-gray-700 border-b border-gray-600 z-[1000] md:justify-center md:py-5 md:relative md:gap-0">
       <Logo />
       <div className="flex items-center gap-2 md:hidden">
         <span>Aulas</span>
