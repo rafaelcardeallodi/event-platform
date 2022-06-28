@@ -45,8 +45,10 @@ export function Video({ lessonSlug }: VideoProps) {
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex items-start flex-col gap-6 md:flex-row md:gap-16">
           <div className="flex-1">
-            <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
-            <p className="mt-4 text-gray-200 leading-relaxed">
+            <h1 className="text-lg md:text-2xl font-bold">
+              {data.lesson.title}
+            </h1>
+            <p className="mt-4 text-gray-200 leading-relaxed text-sm md:text-[1rem]">
               {data.lesson.description}
             </p>
 
@@ -58,7 +60,7 @@ export function Video({ lessonSlug }: VideoProps) {
                 />
 
                 <div className="leading-relaxed">
-                  <strong className="font-bold text-2xl block">
+                  <strong className="font-bold md:text-2xl block text-lg">
                     {data.lesson.teacher.name}
                   </strong>
                   <span className="text-gray-200 text-sm block">

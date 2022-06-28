@@ -35,12 +35,12 @@ export function Subscribe() {
         <div className="max-w-[640px] flex flex-col items-center md:items-start px-6 md:px-0">
           <Logo />
 
-          <h1 className="mt-8 text-[2.5rem] leading-tight text-center md:text-left">
+          <h1 className="mt-8 text-3xl md:text-[2.5rem] leading-tight text-center md:text-left">
             Construa uma{" "}
             <strong className="text-blue-500">aplicação completa</strong>, do
             zero, com <strong className="text-blue-500">React</strong>
           </h1>
-          <p className="mt-4 text-gray-200 leading-relaxed text-center md:text-left">
+          <p className="mt-4 text-gray-200 leading-relaxed text-center md:text-left text-sm md:text-base">
             Em apenas uma semana você vai dominar na prática uma das tecnologias
             mais utilizadas e com alta demanda para acessar as melhores
             oportunidades do mercado.
@@ -48,7 +48,7 @@ export function Subscribe() {
         </div>
 
         <div className="p-8 bg-gray-700 border border-gray-500 rounded w-full mt-8 md:w-auto md:mt-0">
-          <strong className="text-2xl mb-6 block">
+          <strong className="text-lg md:text-2xl mb-6 block">
             Inscreva-se gratuitamente
           </strong>
 
@@ -81,7 +81,7 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src={codeMockupImg} className="mt-10" alt="" />
+      <img src={codeMockupImg} className="mt-4 md:mt-10" />
     </div>
   );
 }
