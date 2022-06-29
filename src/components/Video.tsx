@@ -1,7 +1,6 @@
 import { DefaultUi, Player, Youtube } from "@vime/react";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
 import {
-  CaretRight,
   DiscordLogo,
   FileArrowDown,
   Image,

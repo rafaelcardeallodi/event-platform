@@ -4,6 +4,17 @@ import { Lesson } from "./Lesson";
 
 interface MobileMenuProps {
   isOpen: boolean;
+  data: {
+    lessons: Lesson[] | undefined;
+  };
+}
+
+interface Lesson {
+  id: string;
+  lessonType: "class" | "live";
+  slug: string;
+  availableAt?: any;
+  title: string;
 }
 
 export function MobileMenu({ isOpen }: MobileMenuProps) {

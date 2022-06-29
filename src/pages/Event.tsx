@@ -1,20 +1,29 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { Header } from "../components/Header";
 import { MobileMenu } from "../components/MobileMenu";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
 
+import { useGetLessonsQuery } from "../graphql/generated";
+
 export function Event() {
   const [isMenuMobileOpen, setIsMenuMobileOpen] = useState<boolean>(false);
 
+  const { data } = useGetLessonsQuery();
+
+  const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
 
   function toggleMenuMobileOpen() {
     document.body.style.overflow = isMenuMobileOpen ? "unset" : "hidden";
 
     setIsMenuMobileOpen(!isMenuMobileOpen);
+  }
+
+  if (data && !slug) {
+    navigate(`/event/lesson/${data.lessons[0].slug}`);
   }
 
   return (
@@ -26,10 +35,19 @@ export function Event() {
         />
         <main className="flex flex-1">
           {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
-          <Sidebar />
+          <Sidebar
+            data={{
+              lessons: data?.lessons,
+            }}
+          />
         </main>
       </div>
-      <MobileMenu isOpen={isMenuMobileOpen} />
+      <MobileMenu
+        isOpen={isMenuMobileOpen}
+        data={{
+          lessons: data?.lessons,
+        }}
+      />
     </>
   );
 }
