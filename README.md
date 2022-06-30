@@ -47,7 +47,7 @@ Este é um projeto desenvolvido durante o evento [Ignite Lab - ReactJS](https://
     - Adicionado responsividade em toda aplicação;
     - Criado componente de MobileMenu;
     - Criado componente de Card (Material complementar/Wallpapers exclusivos);
-    - Adicionado função de entrar com Github com firebase;
+    - Adicionado funcionalidade de cadastrar/entrar com Github através do firebase;
     - Em andamento...
 
 ## 🔖 Layout
