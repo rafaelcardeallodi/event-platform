@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Loading } from "../components/Loading";
@@ -8,10 +8,11 @@ import { useCreateSubscriberMutation } from "../graphql/generated";
 
 import codeMockupImg from "../assets/code-mockup.png";
 import { GithubLogo } from "phosphor-react";
-import { Button } from "../components/Button";
+import { useAuth } from "../hooks/useAuth";
 
 export function Subscribe() {
   const navigate = useNavigate();
+  const { loadingAuth, subscribeWithGithub } = useAuth();
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -27,6 +28,12 @@ export function Subscribe() {
         email,
       },
     });
+
+    navigate("/event");
+  }
+
+  async function handleSubscribeWithGithub() {
+    await subscribeWithGithub();
 
     navigate("/event");
   }
@@ -83,13 +90,21 @@ export function Subscribe() {
               {loading ? <Loading /> : "Garantir minha vaga"}
             </button>
 
-            <Button
-              href="#"
-              leftIcon={<GithubLogo size={24} />}
-              variant="secondary"
+            <button
+              onClick={handleSubscribeWithGithub}
+              disabled={loadingAuth}
+              className="p-4 text-sm flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-gray-900"
+              type="button"
             >
-              Cadastrar com GitHub
-            </Button>
+              {loadingAuth ? (
+                <Loading />
+              ) : (
+                <>
+                  <GithubLogo size={24} />
+                  Entrar com Github
+                </>
+              )}
+            </button>
           </form>
         </div>
       </div>
