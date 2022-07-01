@@ -48,7 +48,7 @@ Este é um projeto desenvolvido durante o evento [Ignite Lab - ReactJS](https://
     - Criado componente de MobileMenu;
     - Criado componente de Card (Material complementar/Wallpapers exclusivos);
     - Adicionado funcionalidade de cadastrar/entrar com Github através do firebase;
-    - Adicionado skeleton como forma de carregamento quando carrega a página do vídeo;
+    - Adicionado skeleton como forma de carregamento quando acessa a página do vídeo;
     - Em andamento...
 
 ## 🔖 Layout
