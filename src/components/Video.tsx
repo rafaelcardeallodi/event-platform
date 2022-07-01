@@ -1,15 +1,11 @@
 import { DefaultUi, Player, Youtube } from "@vime/react";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
-import {
-  DiscordLogo,
-  FileArrowDown,
-  Image,
-  Lightning,
-} from "phosphor-react";
+import { DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 
 import "@vime/core/themes/default.css";
 import { Button } from "./Button";
 import { Card } from "./Card";
+import { VideoSkeleton } from "./VideoSkeleton";
 
 interface VideoProps {
   lessonSlug: string;
@@ -23,11 +19,7 @@ export function Video({ lessonSlug }: VideoProps) {
   });
 
   if (!data || !data.lesson) {
-    return (
-      <div className="flex-1">
-        <p>Carregando...</p>
-      </div>
-    );
+    return <VideoSkeleton />;
   }
 
   return (
