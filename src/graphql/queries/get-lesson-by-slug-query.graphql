@@ -3,6 +3,7 @@ query GetLessonBySlug($slug: String) {
     title
     videoId
     description
+    availableAt
     teacher {
       bio
       avatarURL

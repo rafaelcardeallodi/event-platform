@@ -11,9 +11,8 @@ import { useGetLessonsQuery } from "../graphql/generated";
 export function Event() {
   const [isMenuMobileOpen, setIsMenuMobileOpen] = useState<boolean>(false);
 
-  const { data } = useGetLessonsQuery();
-
   const navigate = useNavigate();
+  const { data } = useGetLessonsQuery();
   const { slug } = useParams<{ slug: string }>();
 
   function toggleMenuMobileOpen() {

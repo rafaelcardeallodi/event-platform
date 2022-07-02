@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+import { isPast } from "date-fns";
 import { DefaultUi, Player, Youtube } from "@vime/react";
+import { useNavigate } from "react-router-dom";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
 import { DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 
@@ -6,7 +9,6 @@ import "@vime/core/themes/default.css";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { VideoSkeleton } from "./VideoSkeleton";
-import { useEffect } from "react";
 
 interface VideoProps {
   lessonSlug: string;
@@ -14,6 +16,7 @@ interface VideoProps {
 }
 
 export function Video({ lessonSlug, onIsMenuMobileOpen }: VideoProps) {
+  const navigate = useNavigate();
   const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: lessonSlug,
@@ -27,6 +30,12 @@ export function Video({ lessonSlug, onIsMenuMobileOpen }: VideoProps) {
 
   if (!data || !data.lesson) {
     return <VideoSkeleton />;
+  }
+
+  const isLessonAvailable = isPast(new Date(data.lesson.availableAt));
+
+  if (!isLessonAvailable) {
+    navigate(`/event`);
   }
 
   return (
