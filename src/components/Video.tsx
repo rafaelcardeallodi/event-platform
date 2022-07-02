@@ -22,6 +22,7 @@ export function Video({ lessonSlug, onIsMenuMobileOpen }: VideoProps) {
 
   useEffect(() => {
     onIsMenuMobileOpen(false);
+    document.body.style.overflow = "unset";
   }, [data]);
 
   if (!data || !data.lesson) {
