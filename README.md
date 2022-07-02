@@ -31,8 +31,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Vite](https://vitejs.dev)
 - [Vime](https://vimejs.com)
 - [GraphQL](https://graphql.org)
-- [Apollo](https://www.apollographql.com)
 - [GraphQL Code Generator](https://www.graphql-code-generator.com)
+- [Apollo](https://www.apollographql.com)
+- [Firebase](https://firebase.google.com)
 
 ## 💻 Projeto
 
@@ -48,8 +49,7 @@ Este é um projeto desenvolvido durante o evento [Ignite Lab - ReactJS](https://
     - Criado componente de MobileMenu;
     - Criado componente de Card (Material complementar/Wallpapers exclusivos);
     - Adicionado funcionalidade de cadastrar/entrar com Github através do firebase;
-    - Adicionado skeleton como forma de carregamento quando acessa a página do vídeo;
-    - Em andamento...
+    - Adicionado skeleton como forma de carregamento quando acessa a página do vídeo.
 
 ## 🔖 Layout
 
