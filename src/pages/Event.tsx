@@ -34,7 +34,11 @@ export function Event() {
           isMenuMobileOpen={isMenuMobileOpen}
         />
         <main className="flex flex-1">
-          {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
+          {slug ? (
+            <Video lessonSlug={slug} onIsMenuMobileOpen={setIsMenuMobileOpen} />
+          ) : (
+            <div className="flex-1" />
+          )}
           <Sidebar
             data={{
               lessons: data?.lessons,

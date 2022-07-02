@@ -6,17 +6,23 @@ import "@vime/core/themes/default.css";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { VideoSkeleton } from "./VideoSkeleton";
+import { useEffect } from "react";
 
 interface VideoProps {
   lessonSlug: string;
+  onIsMenuMobileOpen: (value: boolean) => void;
 }
 
-export function Video({ lessonSlug }: VideoProps) {
+export function Video({ lessonSlug, onIsMenuMobileOpen }: VideoProps) {
   const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: lessonSlug,
     },
   });
+
+  useEffect(() => {
+    onIsMenuMobileOpen(false);
+  }, [data]);
 
   if (!data || !data.lesson) {
     return <VideoSkeleton />;
